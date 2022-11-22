@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .searchBox{
+      width: 500px;
+      height: 50px;
+      margin: 100px auto ;
+      border: 1px solid red;
+      background-color: pink;
+      line-height: 50px;
+      text-align: center;
+    }
+    .xingzuoDetail{
+      text-align: center;
+    }
+  </style>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="deom">
+    <div class="searchBox">
+      请输入你的星座:
+      <input type="text"  id="xingZuoMing" v-model="xingZuoMing">
+      <input type="button" value="确定" @click="query">
+    </div>
+    <div class="xingzuoDetail" v-html="xingzuoDetail"></div>
+  </div>
+  <script>
+    new Vue({
+      el:'#deom',
+      data:{
+        xingZuoMing:'',
+        xingzuoDetail:''
+      },
+      methods:{
+        query:function(){
+          switch(this.xingZuoMing){
+            case '水瓶座':
+              this.xingzuoDetail = "<img src='images/12/shuiping.png'  />";
+              break;
+            case '双鱼座':
+              this.xingzuoDetail = "<img src='images/12/shuangyu.png'  />";
+              break;
+            case '白羊座':
+              this.xingzuoDetail = "<img src='images/12/baiyang.png'  />";
+              break;
+            case '金牛座':
+              this.xingzuoDetail = "<img src='images/12/jinniu.png'  />";
+              break;
+            case '双子座':
+              this.xingzuoDetail = "<img src='images/12/shuangzi.png'  />";
+              break;
+            case '巨蟹座':
+              this.xingzuoDetail = "<img src='images/12/juxie.png'  />";
+              break;
+            case '狮子座':
+              this.xingzuoDetail = "<img src='images/12/shizi.png'  />";
+              break;
+            case '处女座':
+              this.xingzuoDetail = "<img src='images/12/chunv.png'  />";
+              break;
+            case '天秤座':
+              this.xingzuoDetail = "<img src='images/12/tiancheng.png'  />";
+              break;
+            case '天蝎座':
+              this.xingzuoDetail = "<img src='images/12/tianxie.png'  />";
+              break;
+            case '射手座':
+              this.xingzuoDetail = "<img src='images/12/sheshou.png'  />";
+              break;
+            case '魔羯座':
+              this.xingzuoDetail = "<img src='images/12/moxie.png'  />";
+              break;
+            default:
+              this.xingzuoDetail = "你输入的内容有问题，请输入类似的如‘射手座’,‘天蝎座’等";
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
